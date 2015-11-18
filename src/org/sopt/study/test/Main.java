@@ -10,9 +10,6 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Hello World!");
 
-
-
-
         Graph graph = new Graph();
 
         //정점 생성
@@ -48,12 +45,8 @@ public class Main {
 
         graph.printGraph();
 
-
         Graph.DFS(graph.Vertices);
 //        Graph.BFS(graph.Vertices,new Queue<Vertex>());
-
-
-
     }
 
     public Graph sampleGraph1(){

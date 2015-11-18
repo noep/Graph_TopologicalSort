@@ -1,6 +1,5 @@
 package org.sopt.study.graph;
 
-import java.util.LinkedList;
 
 /**
  * Created by NOEP on 2015. 10. 25..

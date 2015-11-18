@@ -35,12 +35,9 @@ public class Graph {
             VertexList.Next = v;
         }
     }
-
-
     public void printGraph(){
 
         Graph g = this;
-
         Vertex v;
         Edge e;
 
@@ -49,29 +46,21 @@ public class Graph {
         }
 
         while(v != null){
-
             System.out.print(" "+v.Data+ " ");
             if( (e = v.AdjacencyList) == null){
                 v = v.Next;
                 System.out.println(" ");
                 continue;
             }
-
             while(e !=null){
                 System.out.print(" "+e.Target.Data + " " + e.Weight +" ");
                 e = e.Next;
             }
             System.out.println(" ");
-
             v = v.Next;
-
-
         }
 
             System.out.println(" ");
-
-
-
     }
 
     public static void DFS(Vertex v) {
@@ -85,7 +74,6 @@ public class Graph {
             }
         }
     }
-
 
     public static void BFS(Vertex v, Queue<Vertex> queue){
         Edge e = null;
@@ -111,16 +99,5 @@ public class Graph {
                 e1.printStackTrace();
             }
         }
-
-
-
-
     }
-
-
-
-
-
-
-
 }

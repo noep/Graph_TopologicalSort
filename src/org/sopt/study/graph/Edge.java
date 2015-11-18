@@ -7,13 +7,9 @@ package org.sopt.study.graph;
 public class Edge {
 
     int Weight;
-
     Edge Next;
-
     Vertex From;
-
     Vertex Target;
-
 
     public Edge (Vertex From, Vertex Target, int Weight){
         this.From = From;
@@ -22,11 +18,8 @@ public class Edge {
 
         this. Next = null;
     }
-
     @Override
     public String toString(){
         return new String("From : "+From.Data+" to : "+Target.Data+" Weight : "+Weight);
     }
-
-
 }
