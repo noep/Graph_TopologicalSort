@@ -37,7 +37,9 @@ public class Graph {
     }
 
 
-    public void printGraph(Graph g){
+    public void printGraph(){
+
+        Graph g = this;
 
         Vertex v;
         Edge e;
@@ -72,43 +74,28 @@ public class Graph {
 
     }
 
-
     public static void DFS(Vertex v) {
-
         Edge e = null;
-
         System.out.println("data : " + v.Data);
-
         v.Visited = true;
         e = v.AdjacencyList;
-
         while (e != null) {
-
             if (e.Target != null && e.Target.Visited == false) {
                 DFS(e.Target);
             }
-
-
         }
-
-
     }
 
 
     public static void BFS(Vertex v, Queue<Vertex> queue){
         Edge e = null;
         System.out.println("data : " + v.Data);
-
         v.Visited = true;
-
         queue.enqueue(v);
-
         while( !queue.isEmpty()){
             try {
                 v = queue.dequeue();
                 e = v.AdjacencyList;
-
-
                 while( e != null){
                     v = e.Target;
 

@@ -39,11 +39,6 @@ public class Vertex {
 
             AdjacencyList.Next = e;
         }
-
-
-
-
-
     }
 
 

@@ -10,44 +10,7 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Hello World!");
 
-        //그래프 생성
-//        Graph G = new Graph();
-//        //정점 생성
-//        Vertex V1 = new Vertex(1);
-//        Vertex V2 = new Vertex(2);
-//        Vertex V3 = new Vertex(3);
-//        Vertex V4 = new Vertex(4);
-//        Vertex V5 = new Vertex(5);
-//
-//        //그래프에 정점 추가
-//        G.AddVertex(V1);
-//        G.AddVertex(V2);
-//        G.AddVertex(V3);
-//        G.AddVertex(V4);
-//        G.AddVertex(V5);
-//
-//        //정점과 정점을 간선으로 이어준다
-//        V1.AddEdge( new Edge(V1,V2,0));
-//        V1.AddEdge( new Edge(V1,V3,0));
-//        V1.AddEdge( new Edge(V1,V4,0));
-//        V1.AddEdge( new Edge(V1,V5,0));
-//
-//        V2.AddEdge(new Edge(V2,V1,0));
-//        V2.AddEdge(new Edge(V2,V3,0));
-//        V2.AddEdge(new Edge(V2,V5,0));
-//
-//        V3.AddEdge(new Edge(V3,V1,0));
-//        V3.AddEdge(new Edge(V3,V2,0));
-//
-//        V4.AddEdge(new Edge(V4,V1,0));
-//        V4.AddEdge(new Edge(V4,V5,0));
-//
-//        V5.AddEdge(new Edge(V5,V1,0));
-//        V5.AddEdge(new Edge(V5,V2,0));
-//        V5.AddEdge(new Edge(V5,V4,0));
-//
-//
-//        G.printGraph();
+
 
 
         Graph graph = new Graph();
@@ -83,7 +46,7 @@ public class Main {
 
         V5.AddEdge(new Edge(V5,V7,0));
 
-        graph.printGraph(graph);
+        graph.printGraph();
 
 
         Graph.DFS(graph.Vertices);
@@ -92,4 +55,49 @@ public class Main {
 
 
     }
+
+    public Graph sampleGraph1(){
+//        그래프 생성
+        Graph G = new Graph();
+        //정점 생성
+        Vertex V1 = new Vertex(1);
+        Vertex V2 = new Vertex(2);
+        Vertex V3 = new Vertex(3);
+        Vertex V4 = new Vertex(4);
+        Vertex V5 = new Vertex(5);
+
+        //그래프에 정점 추가
+        G.AddVertex(V1);
+        G.AddVertex(V2);
+        G.AddVertex(V3);
+        G.AddVertex(V4);
+        G.AddVertex(V5);
+
+        //정점과 정점을 간선으로 이어준다
+        V1.AddEdge( new Edge(V1,V2,0));
+        V1.AddEdge( new Edge(V1,V3,0));
+        V1.AddEdge( new Edge(V1,V4,0));
+        V1.AddEdge( new Edge(V1,V5,0));
+
+        V2.AddEdge(new Edge(V2,V1,0));
+        V2.AddEdge(new Edge(V2,V3,0));
+        V2.AddEdge(new Edge(V2,V5,0));
+
+        V3.AddEdge(new Edge(V3,V1,0));
+        V3.AddEdge(new Edge(V3,V2,0));
+
+        V4.AddEdge(new Edge(V4,V1,0));
+        V4.AddEdge(new Edge(V4,V5,0));
+
+        V5.AddEdge(new Edge(V5,V1,0));
+        V5.AddEdge(new Edge(V5,V2,0));
+        V5.AddEdge(new Edge(V5,V4,0));
+
+
+        G.printGraph();
+        return G;
+    }
+
+
+
 }
