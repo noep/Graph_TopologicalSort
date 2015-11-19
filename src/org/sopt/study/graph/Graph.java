@@ -100,4 +100,44 @@ public class Graph {
             }
         }
     }
+
+    public void topologicalSort(Vertex vertices, LinkedList sortedList) {
+        System.out.println("Topological Sort in "+vertices.Data);
+
+        Vertex vertex = vertices;
+
+        while(vertex != null && vertex.Visited ==false){
+            System.out.println(vertex.Data);
+            TS_DFS(vertex,sortedList);
+            vertex =vertex.Next;
+        }
+    }
+
+    private void TS_DFS(Vertex vertex, LinkedList sortedList) {
+
+//        System.out.println("Topological Sort DFS "+vertex.Data);
+        Edge edge = null;
+
+        vertex.Visited = true;
+
+        edge = vertex.AdjacencyList;
+
+        sortedList.addFirst(vertex.Data);
+
+        for (int i =0; i<sortedList.size(); i++){
+            System.out.print(sortedList.get(i)+" ");
+        }
+
+        while (edge != null){
+            if(edge.Target != null && edge.Target.Visited == false){
+            System.out.println(vertex.Data);
+                TS_DFS(edge.Target,sortedList);
+            }
+        }
+
+
+
+
+
+    }
 }
