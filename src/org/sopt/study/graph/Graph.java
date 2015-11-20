@@ -35,6 +35,7 @@ public class Graph {
             VertexList.Next = v;
         }
     }
+
     public void printGraph(){
 
         Graph g = this;
@@ -102,9 +103,9 @@ public class Graph {
         }
     }
 
-    public void topologicalSort(Vertex vertices, LinkedList sortedList) {
+    public void topologicalSort( LinkedList sortedList) {
         //System.out.println("topologicalSort "+vertices.Data);
-        Vertex vertex = vertices;
+        Vertex vertex = this.Vertices;
 
         while(vertex != null  && vertex.Visited ==false){
             TS_DFS(vertex,sortedList);
@@ -113,7 +114,7 @@ public class Graph {
     }
 
     private void TS_DFS(Vertex vertex, LinkedList sortedList) {
-        System.out.println("TS_DFS "+vertex.Data);
+        //System.out.println("TS_DFS "+vertex.Data);
         vertex.Visited = true;
         //이렇게 하면 그냥 DFS
         //sortedList.add(vertex.Data);

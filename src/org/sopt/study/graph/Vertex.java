@@ -11,8 +11,9 @@ public class Vertex {
     boolean Visited = false;
     int Index;
 
-    Vertex Next;
     Edge AdjacencyList;
+
+    Vertex Next;
 
     public Vertex( int Data){
         this.Data = Data;

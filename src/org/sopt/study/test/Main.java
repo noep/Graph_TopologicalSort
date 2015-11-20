@@ -10,7 +10,6 @@ import java.util.LinkedList;
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
         LinkedList sortedList = new LinkedList<Vertex>();
         /**
          * 그래프 생성
@@ -57,26 +56,17 @@ public class Main {
         //연결O
         //graph.printGraph();
 
-        graph.topologicalSort(graph.Vertices,sortedList);
+        graph.topologicalSort(sortedList);
 
         System.out.println("Topological Sort : ");
-
         for (int i =0; i<sortedList.size(); i++){
             System.out.print(sortedList.get(i)+" ");
         }
+        System.out.println("");
         System.out.println("Topological Sort End ");
 
-
-
-
     }
 
-    private static void addString(LinkedList<String> a) {
-        a.push("fdsfsdf");
-        a.push("fdsfsdf");
-        a.push("fdsfsdf");
-
-    }
 
     public Graph sampleGraph1(){
 //        그래프 생성
@@ -114,7 +104,6 @@ public class Main {
         V5.AddEdge(new Edge(V5,V1,0));
         V5.AddEdge(new Edge(V5,V2,0));
         V5.AddEdge(new Edge(V5,V4,0));
-
 
         G.printGraph();
         return G;

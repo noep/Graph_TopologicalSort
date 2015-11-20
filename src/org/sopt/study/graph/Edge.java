@@ -7,9 +7,10 @@ package org.sopt.study.graph;
 public class Edge {
 
     int Weight;
-    Edge Next;
     Vertex From;
     Vertex Target;
+
+    Edge Next;
 
     public Edge (Vertex From, Vertex Target, int Weight){
         this.From = From;
