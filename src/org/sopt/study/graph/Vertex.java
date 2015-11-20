@@ -40,11 +40,5 @@ public class Vertex {
         }
     }
 
-    public int getData() {
-        return Data;
-    }
 
-    public void setData(int data) {
-        Data = data;
-    }
 }

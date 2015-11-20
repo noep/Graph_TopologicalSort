@@ -72,6 +72,7 @@ public class Graph {
             if (e.Target != null && e.Target.Visited == false) {
                 DFS(e.Target);
             }
+            e=e.Next;
         }
     }
 
@@ -102,36 +103,65 @@ public class Graph {
     }
 
     public void topologicalSort(Vertex vertices, LinkedList sortedList) {
-        System.out.println("topologicalSort "+vertices.Data);
-
+        //System.out.println("topologicalSort "+vertices.Data);
         Vertex vertex = vertices;
 
-        while(vertex != null && vertex.Visited ==false){
+        while(vertex != null  && vertex.Visited ==false){
             TS_DFS(vertex,sortedList);
-            vertex =vertex.Next;
-            //DFT탈출조건이 잘못되서그런가 밖으로 나오지를 못한다
-            System.out.println("vertex next");
-
+            vertex = vertex.Next;
         }
     }
 
     private void TS_DFS(Vertex vertex, LinkedList sortedList) {
-
         System.out.println("TS_DFS "+vertex.Data);
-        Edge edge = null;
         vertex.Visited = true;
-        edge = vertex.AdjacencyList;
+        //이렇게 하면 그냥 DFS
+        //sortedList.add(vertex.Data);
 
+
+        Edge edge = vertex.AdjacencyList;
         while (edge != null){
             if(edge.Target != null && edge.Target.Visited == false){
                 TS_DFS(edge.Target,sortedList);
             }
+            edge = edge.Next;
+        }
+        sortedList.push(vertex.Data);
+
+    }
+
+    public void tSort(){
+        System.out.println("Tsort Started");
+
+        Vertex vertices = this.Vertices;
+        Edge edge;
+
+        //전체 Vertex를 조사
+        while(vertices != null && vertices.Visited ==false){
+            System.out.println("Vertex : " +vertices.Data);
+            edge = vertices.AdjacencyList;
+
+            while( edge !=null){
+                System.out.print("Vertex Has Edge : "+ edge.From.Data + edge.Target.Data);
+
+
+
+                edge = edge.Next;
+            }
+            System.out.println();
+
+
+
+            vertices.Visited = true;
+            vertices = vertices.Next;
+
+
         }
 
-        sortedList.addFirst(vertex.Data);
-        System.out.println(sortedList);
 
 
 
     }
+
+
 }

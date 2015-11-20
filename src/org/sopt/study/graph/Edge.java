@@ -15,7 +15,6 @@ public class Edge {
         this.From = From;
         this.Target = Target;
         this. Weight = Weight;
-
         this. Next = null;
     }
     @Override
